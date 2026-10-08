@@ -159,7 +159,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.25,
+        "min_track_width": 0.1,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.0,
@@ -529,16 +529,25 @@
         "clearance": 0.2,
         "name": "GND",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 2,
+        "priority": 4,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.0,
         "tuning_profile": ""
       },
       {
         "clearance": 0.2,
-        "name": "POWER",
+        "name": "MICROSTRIP_50",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.172375,
+        "tuning_profile": ""
+      },
+      {
+        "clearance": 0.2,
+        "name": "POWER",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 3,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.5,
         "tuning_profile": ""
@@ -547,9 +556,18 @@
         "clearance": 0.2,
         "name": "SIGNAL",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.25,
+        "tuning_profile": ""
+      },
+      {
+        "clearance": 0.2,
+        "name": "STRIPLINE_50",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.112506,
         "tuning_profile": ""
       }
     ],
@@ -564,6 +582,10 @@
         "pattern": "*3V3"
       },
       {
+        "netclass": "STRIPLINE_50",
+        "pattern": "*CS*"
+      },
+      {
         "netclass": "SIGNAL",
         "pattern": "*IN1"
       },
@@ -574,6 +596,30 @@
       {
         "netclass": "SIGNAL",
         "pattern": "*IN3"
+      },
+      {
+        "netclass": "STRIPLINE_50",
+        "pattern": "*MISO*"
+      },
+      {
+        "netclass": "STRIPLINE_50",
+        "pattern": "*MOSI*"
+      },
+      {
+        "netclass": "MICROSTRIP_50",
+        "pattern": "*ONEWIRE*"
+      },
+      {
+        "netclass": "STRIPLINE_50",
+        "pattern": "*SCK*"
+      },
+      {
+        "netclass": "MICROSTRIP_50",
+        "pattern": "*SCL*"
+      },
+      {
+        "netclass": "MICROSTRIP_50",
+        "pattern": "*SDA*"
       },
       {
         "netclass": "POWER",
@@ -744,7 +790,7 @@
         "uuid": "a80ac9b4-6a18-46be-9769-32271ad0f9b9"
       }
     ],
-    "used_designators": "U1-2,C1-6,#PWR1-7,#FLG1-2,J1-3,R1-3",
+    "used_designators": "U1-5,C1-6,#PWR1-9,#FLG1-2,J1-3,R1-6",
     "variants": []
   },
   "sheets": [
